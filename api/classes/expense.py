@@ -38,10 +38,15 @@ class Expenses:
         return sum(self.get_expense_amounts())
 
     # B1E
+    def avg_expenses(self):
+        """Docstring"""
+        total = self.sum_expenses()
+        return total / len(self.expenses) if self.expenses else 0.0
+
     def total_and_average_expenses(self):
         """Docstring"""
         total = self.sum_expenses()
-        average = total / len(self.expenses) if self.expenses else 0.0
+        average = self.avg_expenses()
         return {"total": total, "average": average}
 
     # B2G
